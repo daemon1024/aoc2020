@@ -11,16 +11,15 @@ passwordDB = passwordDB.map((db) => {
 
 let validCount = 0;
 
-const countLetter = (letter,password) => {
-    let count = 0;
-    for (const ch of password) letter == ch && count++;
-    return count;
-}
+const countLetter = (letter, password) => {
+  let count = 0;
+  for (const ch of password) letter == ch && count++;
+  return count;
+};
 
-passwordDB.map(db => {
-    let chCount = countLetter(db[1][0],db[2]);
-    chCount >= db[0][0] && chCount <= db[0][1] && validCount++;
-})
+passwordDB.map((db) => {
+  let chCount = countLetter(db[1][0], db[2]);
+  chCount >= db[0][0] && chCount <= db[0][1] && validCount++;
+});
 
 console.log(validCount);
-
